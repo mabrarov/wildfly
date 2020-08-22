@@ -13,7 +13,7 @@ env:
     - MAVEN_WRAPPER: 0
     - COVERAGE_BUILD: 0
     - COPILOT_BUILD: 0
-    - MAVEN_BUILD_OPTIONS: "-DskipTests -Dmaven.javadoc.skip=true"
+    - MAVEN_BUILD_OPTIONS: "-DskipTests -DskipITs -Dmaven.javadoc.skip=true"
     - CURL_CONNECT_TIMEOUT: 300
     - CURL_MAX_TIME: 1800
     - CURL_RETRY: 10
@@ -27,9 +27,6 @@ matrix:
     - dist: bionic
       jdk: openjdk8
       env: COPILOT_BUILD=1
-    # OpenJDK 11
-    - dist: bionic
-      jdk: openjdk11
 
 install: source ./travis/install.sh
 
