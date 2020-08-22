@@ -1,5 +1,9 @@
 WildFly Application Server
 ========================
+
+[![Travis CI build status](https://travis-ci.org/mabrarov/wildfly.svg?branch=feature%2Ftravis)](https://travis-ci.org/mabrarov/wldfly)
+[![Black Duck Security Risk](https://copilot.blackducksoftware.com/github/repos/mabrarov/wildfly/branches/feature%2Ftravis/badge-risk.svg)](https://copilot.blackducksoftware.com/github/repos/mabrarov/wildfly/branches/feature%2Ftravis)
+
 https://wildfly.org
 
 * Fast Startup
