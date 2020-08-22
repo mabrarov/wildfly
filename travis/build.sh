@@ -26,3 +26,7 @@ build_cmd="${build_cmd}${MAVEN_BUILD_OPTIONS:+ }${MAVEN_BUILD_OPTIONS}"
 
 echo "Building with: ${build_cmd}"
 eval "${build_cmd}"
+
+if [[ "${COPILOT_BUILD}" -ne 0 ]]; then
+  bash <(curl -s https://copilot.blackducksoftware.com/ci/travis/scripts/upload)
+fi
