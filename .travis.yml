@@ -13,7 +13,7 @@ env:
     - MAVEN_WRAPPER: 0
     - COVERAGE_BUILD: 0
     - COPILOT_BUILD: 0
-    - MAVEN_BUILD_OPTIONS: '"-q -DskipTests -DskipITs -Dmaven.javadoc.skip=true -Dmaven.source.skip=true"'
+    - MAVEN_BUILD_OPTIONS: '"-q"'
     - CURL_CONNECT_TIMEOUT: 300
     - CURL_MAX_TIME: 1800
     - CURL_RETRY: 10
