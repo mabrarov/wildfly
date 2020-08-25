@@ -28,9 +28,6 @@ matrix:
       jdk: 'openjdk8'
       env:
         COPILOT_BUILD: '1'
-    # OpenJDK 11
-    - dist: 'bionic'
-      jdk: 'openjdk11'
 
 install: 'source ./travis/install.sh'
 
