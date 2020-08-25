@@ -1,33 +1,67 @@
-language: java
+language: 'java'
 
 cache:
   directories:
-    - ${HOME}/.m2/repository
-    - ${HOME}/downloads
+    - '${HOME}/.m2/repository'
+    - '${HOME}/downloads'
 
 before_cache:
-  - mvn -q -fn org.codehaus.mojo:build-helper-maven-plugin:3.2.0:remove-project-artifact -Dbuildhelper.removeAll=false -Dbuildhelper.failOnError=false
+  - 'mvn -q -fn org.codehaus.mojo:build-helper-maven-plugin:3.2.0:remove-project-artifact -Dbuildhelper.removeAll=false -Dbuildhelper.failOnError=false'
 
 env:
   global:
-    - MAVEN_WRAPPER: 0
-    - COVERAGE_BUILD: 0
-    - COPILOT_BUILD: 0
-    - MAVEN_BUILD_OPTIONS: '"-q -DskipTests -DskipITs -Dmaven.javadoc.skip=true -Dmaven.source.skip=true"'
-    - CURL_CONNECT_TIMEOUT: 300
-    - CURL_MAX_TIME: 1800
-    - CURL_RETRY: 10
-    - CURL_RETRY_DELAY: 10
-    - DEPENDENCIES_HOME: ${HOME}/dependencies
-    - DOWNLOADS_HOME: ${HOME}/downloads
+    - MAVEN_BUILD_OPTIONS: '"-Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn"'
+    - MAVEN_WRAPPER: '0'
+    - COVERAGE_BUILD: '0'
+    - COPILOT_BUILD: '0'
+    - CURL_CONNECT_TIMEOUT: '300'
+    - CURL_MAX_TIME: '1800'
+    - CURL_RETRY: '10'
+    - CURL_RETRY_DELAY: '10'
+    - DEPENDENCIES_HOME: '${HOME}/dependencies'
+    - DOWNLOADS_HOME: '${HOME}/downloads'
 
 matrix:
   include:
     # OpenJDK 8
-    - dist: bionic
-      jdk: openjdk8
-      env: COPILOT_BUILD=1
+    - dist: 'bionic'
+      jdk: 'openjdk8'
+      env:
+        COPILOT_BUILD: '1'
+    # OpenJDK 11
+    - dist: 'bionic'
+      jdk: 'openjdk11'
+    # Amazon Corretto 8
+    - dist: 'bionic'
+      env:
+        - CUSTOM_JDK: 'amazon-corretto'
+        - CUSTOM_JDK_VERSION: '8.265.01.1'
+    # Amazon Corretto 11
+    - dist: 'bionic'
+      env:
+        - CUSTOM_JDK: 'amazon-corretto'
+        - CUSTOM_JDK_VERSION: '11.0.8.10.1'
+    # Azul Systems Zulu 8
+    - dist: 'bionic'
+      env:
+        - CUSTOM_JDK: 'azul-zulu'
+        - CUSTOM_JDK_VERSION: '8.48.0.53-ca-jdk8.0.265'
+    # Azul Systems Zulu 11
+    - dist: 'bionic'
+      env:
+        - CUSTOM_JDK: 'azul-zulu'
+        - CUSTOM_JDK_VERSION: '11.41.23-ca-jdk11.0.8'
+    # AdoptOpenJDK 8
+    - dist: 'bionic'
+      env:
+        - CUSTOM_JDK: 'AdoptOpenJDK'
+        - CUSTOM_JDK_VERSION: '8u265b01'
+    # AdoptOpenJDK 11
+    - dist: 'bionic'
+      env:
+        - CUSTOM_JDK: 'AdoptOpenJDK'
+        - CUSTOM_JDK_VERSION: '11.0.8_10'
 
-install: source ./travis/install.sh
+install: 'source ./travis/install.sh'
 
-script: source ./travis/build.sh
+script: 'source ./travis/build.sh'
