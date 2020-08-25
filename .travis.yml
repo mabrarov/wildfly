@@ -30,6 +30,9 @@ matrix:
     # OpenJDK 11
     - dist: bionic
       jdk: openjdk11
+    # OpenJDK 14
+    - dist: bionic
+      jdk: openjdk14
 
 install: source ./travis/install.sh
 
