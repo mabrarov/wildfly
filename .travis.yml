@@ -31,9 +31,6 @@ matrix:
     # OpenJDK 11
     - dist: 'bionic'
       jdk: 'openjdk11'
-    # OpenJDK 14
-    - dist: 'bionic'
-      jdk: 'openjdk14'
     # Amazon Corretto 8
     - dist: 'bionic'
       env:
