@@ -8,7 +8,7 @@ WildFly Application Server
 ========================
 
 [![Travis CI build status](https://travis-ci.com/mabrarov/wildfly.svg?branch=feature%2Fmaster_travis)](https://travis-ci.com/mabrarov/wildfly)
-[![Black Duck Security Risk](https://copilot.blackducksoftware.com/github/repos/mabrarov/wildfly/branches/feature%2Fmaster_travis/badge-risk.svg)](https://copilot.blackducksoftware.com/github/repos/mabrarov/wildfly/branches/feature%2Fmaster_travis)
+[![Black Duck Security Risk](https://copilot.blackducksoftware.com/github/repos/mabrarov/wildfly/branches/feature%2F20.1.0.Final_travis/badge-risk.svg)](https://copilot.blackducksoftware.com/github/repos/mabrarov/wildfly/branches/feature%2F20.1.0.Final_travis)
 
 https://wildfly.org
 
